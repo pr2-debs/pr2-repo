@@ -5,13 +5,13 @@ PKG=pr2-repo
 
 case "$1" in
   configure)
-	if [ -e /etc/apt/pr2_key.gpg ]; then
-	    apt-key add /etc/apt/pr2_key.gpg
+	if [ -e /etc/apt/pr2-packages.key ]; then
+	    apt-key add /etc/apt/pr2-packages.key
 	fi
 
         . /etc/lsb-release
         
-        echo "deb http://packages.ros.org/pr2/ubuntu ${DISTRIB_CODENAME} main" > /etc/apt/sources.list.d/pr2debs.list
+        echo "deb http://packages.clearpathrobotics.com/pr2-releases/pr2-0.8.0/ubuntu ${DISTRIB_CODENAME} main" > /etc/apt/sources.list.d/pr2debs.list
     ;;
 
   *)
